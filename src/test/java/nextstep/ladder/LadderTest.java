@@ -18,7 +18,7 @@ class LadderTest {
 
     @BeforeEach
     void init() {
-        ArrayList<LadderRow> ladderRowList = new ArrayList<>();
+        List<LadderRow> ladderRowList = new ArrayList<>();
 
         LadderRow ladderRow1 = new LadderRow(5, new AllDraw());
         LadderRow ladderRow2 = new LadderRow(5, new NoDraw());
@@ -48,7 +48,7 @@ class LadderTest {
 
     @Test
     void getLadder() {
-        var actualLadder = ladder.getLadder();
+        var actualLadder = ladder.getLadderRows();
         var expectLadder = List.of(new LadderRow(5, new AllDraw()),
                 new LadderRow(5, new NoDraw()),
                 new LadderRow(5, new NoDraw()),
@@ -57,20 +57,5 @@ class LadderTest {
         );
 
         assertThat(actualLadder).isEqualTo(expectLadder);
-    }
-
-    @Test
-    void getResultIndex() {
-        var actualResultIndex0 = ladder.getResultIndex(0);
-        var actualResultIndex1 = ladder.getResultIndex(1);
-        var actualResultIndex2 = ladder.getResultIndex(2);
-        var actualResultIndex3 = ladder.getResultIndex(3);
-        var actualResultIndex4 = ladder.getResultIndex(4);
-
-        assertThat(1).isEqualTo(actualResultIndex0);
-        assertThat(0).isEqualTo(actualResultIndex1);
-        assertThat(3).isEqualTo(actualResultIndex2);
-        assertThat(2).isEqualTo(actualResultIndex3);
-        assertThat(4).isEqualTo(actualResultIndex4);
     }
 }

@@ -19,7 +19,7 @@ public class MainAction {
 
         Ladder ladder = new Ladder(persons, ladderHeight, new RandomDraw());
 
-        ResultView.printLadder(ladder.getLadder());
+        ResultView.printLadder(ladder.getLadderRows());
         ResultView.printLadderResults(results.getResults());
 
         // 결과 표출 while문
